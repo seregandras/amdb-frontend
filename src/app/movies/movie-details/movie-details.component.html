@@ -1,0 +1,28 @@
+<div *ngIf="movie">
+  <div class="container">
+    <h2>{{movie.name}} details:</h2>
+    <table class="table table-bordered" style="width:50%">
+      <tr>
+        <th>ID</th>
+        <th>{{movie.id}}</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>{{movie.name}}</th>
+      </tr>
+      <tr>
+        <th>Year</th>
+        <th>{{movie.year}}</th>
+      </tr>
+      <tr>
+        <th>Director</th>
+        <th>{{movie.director}}</th>
+      </tr>
+      <tr>
+        <th>Score</th>
+        <th>{{movie.score}}</th>
+      </tr>
+    </table>
+    <button class="btn btn-danger" (click)="delete()">Delete</button>
+  </div>
+</div>

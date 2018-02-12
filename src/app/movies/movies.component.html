@@ -1,0 +1,17 @@
+<div class="container">
+  <table class="table table-hover" style="width:75%">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Name</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mov of movies" [class.selected]="mov === selectedMovie" (click)="onSelect(mov)">
+        <td>{{ mov['name'] }}</td>
+        <td>{{ mov['year'] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-movie-details [movie]="selectedMovie"></app-movie-details>

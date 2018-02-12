@@ -1,0 +1,41 @@
+<h3>Add a New Movie</h3>
+<div [hidden]="submitted" style="width: 300px;">
+	<form (ngSubmit)="onSubmit()">
+		<div class="form-group">
+			<label for="name">Name</label> <input type="text"
+				class="form-control" id="name" required
+				[(ngModel)]="movie['name']" name="name">
+		</div>
+
+		<div class="form-group">
+			<label for="year">Year</label> <input type="number"
+				class="form-control" id="year" required
+				[(ngModel)]="movie['year']" name="year">
+    </div>
+
+    <div class="form-group">
+			<label for="director">Director</label> <input type="text"
+				class="form-control" id="director" required
+				[(ngModel)]="movie['director']" name="director">
+    </div>
+
+    <div class="form-group">
+			<label for="score">Score</label> <input type="number"
+				class="form-control" id="score" required
+				[(ngModel)]="movie['score']" name="score">
+		</div>
+
+		<div class="btn-group">
+			<button class="btn btn-primary" (click)="goBack()">Back</button>
+			<button type="submit" class="btn btn-success">Submit</button>
+		</div>
+	</form>
+</div>
+
+<div [hidden]="!submitted">
+	<div class="btn-group ">
+		<h4>You submitted successfully!</h4>
+		<button class="btn btn-primary" (click)="goBack()">Back</button>
+		<button class="btn btn-success" (click)="newMovie()">Add</button>
+	</div>
+</div>
